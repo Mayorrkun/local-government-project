@@ -1,0 +1,99 @@
+.logo{
+width: 140px;
+    height: 23px;
+}
+
+/**/
+
+.user-login-section{
+    display: flex;
+    gap:100px;
+    background-color: #f5f5f5;
+    height: 100vh;
+    width: 100vw;
+}
+.user-form-container{
+    background-color: #fff;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.desc{
+    font-size: 15px;
+    color: #717680;
+}
+.user-login-form{
+    width: 19rem;
+    padding: 0;
+}
+/**/
+.input-holder{
+    display: flex;
+    flex-direction: column;
+}
+.input-holder label{
+    color: #414651;
+    font-weight: bold;
+    font-size: 14px;
+}
+.input-holder input{
+    border: 1px solid #717680;
+    border-radius: 4px;
+    padding: 7px 10px;
+}
+
+/**/
+.login-button{
+    width: 100%;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #1d1d1d;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.misc-p{
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    align-items: center;
+}
+.misc-p > label{
+    display: flex;
+    align-items: center;
+    color: #414651;
+}
+
+.misc-p > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1d1d1d;
+    cursor: pointer;
+}
+
+.misc-p > label > a {
+    text-decoration: none;
+    color: #1d1d1d;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/**/
+
+.screen-mockup{
+    margin: auto 0;
+    height: 75vh;
+    width: calc((100vw - 30rem - 100px));
+    background-color: #ffffff;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 0 2px 5px #414651;
+    border:3px solid #f0f0f0;
+    border-right: none;
+}
