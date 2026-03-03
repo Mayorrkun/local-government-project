@@ -1,7 +1,6 @@
 .sidenav {
     background: #fff;
-    height: 100vh;
-    position: fixed;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
     top: 0;

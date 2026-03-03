@@ -1,7 +1,14 @@
-.back-blur{
-
+.general-section{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    justify-content: space-between;
 }
-
-.user-container{
-
+.main-container {
+    width: 80vw;
+    height: 100vh;
+    padding: 20px;
 }
