@@ -1,4 +1,4 @@
-import "../../css/user/login.css"
+import "../../css/auth/login.css"
 import Logo from "../../media/logo.png";
 import {Link} from "react-router-dom";
 export function Register() {

@@ -1,0 +1,123 @@
+.sidenav {
+    background: #fff;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    padding: 10px 30px 50px 10px;
+    border: 1px solid #d1d5db;
+}
+
+.sidenav-logo {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+
+}
+.sidenav-logo > img {
+
+    width: 156px;
+    height: 26px;
+}
+.sidenav-logo > input {
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+
+/**/
+
+.sidenav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    color: #414651;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.sidenav-menu > li {
+    padding: 10px ;
+    border:none;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: #e9eaeb;
+}
+
+.sidenav-end{
+    margin: auto 0 30px 0;
+}
+.sidenav-end > ul {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    color: #414651;
+    font-weight: bold;
+    font-size: 15px;
+}
+.sidenav-end > ul li {
+    padding: 10px ;
+    border:none;
+    border-radius: 5px;
+}
+
+.nav-profile{
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+.nav-profile > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+
+}
+.pfp{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #d1d5db;
+}
+.nav-profile > div > p{
+display: flex;
+    flex-direction: column;
+}
+.nav-profile > div > p > span{
+    color: #6b7280;
+}
+
+.support{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.online-status{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 5px 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.online-status > span{
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    background-color: #17b26a;
+}
