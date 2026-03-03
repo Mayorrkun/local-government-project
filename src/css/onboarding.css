@@ -30,7 +30,7 @@
     color: #717680;
 }
 .carousel {
-    height: 60% ;
+    min-height: auto ;
     overflow: hidden;
     margin: 20px 0;
 }
