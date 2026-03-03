@@ -78,3 +78,38 @@
 .carousel-buttons > button:disabled{
     background-color: #414651;
 }
+
+.upload-container {
+    width: 100%;
+}
+.upload-container > p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.upload-container > label{
+    display: flex;
+    justify-content: center;
+    border: 2px dashed #d1d5db;
+    border-radius: 10px;
+    padding: 30px;
+    cursor: pointer;
+    background-color: #f9fafb;
+    transition: 0.2s;
+}
+.upload-container > label > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.upload-container > label > div > span{
+    font-size: 12px;
+    color: #6b7280
+}
+.upload-container > label > div > p {
+    font-size: 14px;
+    margin: 0;
+}
+.upload-container > label > div > img {
+    margin: 0 auto;
+}

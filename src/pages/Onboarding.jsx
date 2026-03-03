@@ -1,6 +1,6 @@
 import "../css/onboarding.css"
 import {useState} from "react";
-
+import Upload from "../../src/media/upload.png";
 export function Onboarding(){
 
     const slides = [
@@ -24,7 +24,18 @@ export function Onboarding(){
         },
         {
           id : 1,
-            content:  (<div className="carousel-slide"> </div>)
+            content:  (<> <div className="upload-container">
+                <p>Upload CAC document</p>
+                <label htmlFor="file-upload">
+                    <div>
+                        <img src={Upload} alt="try again"/>
+                        <p><strong>Click to upload</strong> or drag and drop</p>
+                        <span>SVG,PNG,JPG or GIF (max. 800x400px)</span>
+                    </div>
+                    <input id="file-upload" type="file" hidden/>
+                </label>
+            </div>
+            </>)
         }
     ]
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -33,7 +44,8 @@ export function Onboarding(){
     const isFirst  = (currentSlide === 0);
     const isLast  = (currentSlide === totalSlides -1 );
 
-    const handleNext = () => {
+    const handleNext = (e) => {
+        e.preventDefault();
         if (!isLast) setCurrentSlide((prev) => prev + 1);
     };
 
@@ -58,9 +70,11 @@ export function Onboarding(){
                     <div>
 
                     </div>
-                    {slides.map(() => (
-                        <>Hello </>
-                    ))}
+                    <div className="progress">
+                        {slides.map(() => (
+                            <span className="bar"></span>
+                        ))}
+                    </div>
                     <div className="carousel">
                         <div className="carousel-track"  style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                             {slides.map((slide) => (
@@ -72,7 +86,7 @@ export function Onboarding(){
                     </div>
                     <div className="carousel-buttons">
                         {!isFirst ? <button type="button" onClick={handlePrevious}>Previous</button>
-                            : <button disabled> Previous</button>
+                            : <button disabled type="button"> Previous</button>
                         }
 
                         {isLast ? <button type="submit">Submit</button>
