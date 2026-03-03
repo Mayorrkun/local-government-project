@@ -41,13 +41,6 @@ export function Register() {
                         <input name="password_confirmation" type="password" id="password_confirmation"/>
 
                     </p>
-
-                    <p className="misc-p">
-                        <label> <input type="checkbox"/>Remember for 30 days </label>
-
-                        <a href="">Forgot password</a>
-
-                    </p>
                     <p className="misc-p">
                         <label>Have an Account ? <Link to="/login"> Log in</Link> </label>
                     </p>

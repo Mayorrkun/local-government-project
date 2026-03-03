@@ -1,0 +1,36 @@
+.onboarding-section{
+    background-color: #cccccc;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.onboarding-section > main {
+    width: 50vw;
+    height: 100vh;
+    background-color: #ffffff;
+    margin: 0 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.onboarding-form{
+    width: 400px;
+    height: 70vh;
+    margin: 0  auto;
+}
+
+.onboarding-form > span{
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.onboarding-form > p{
+    font-size: 14px;
+    color: #717680;
+    white-space: pre;
+}
+.carousel {
+    display: flex;
+    flex-direction: row;
+    height: 60% ;
+}
