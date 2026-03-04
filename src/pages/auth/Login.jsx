@@ -10,14 +10,16 @@ export function Login(){
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-    const handleLogin = async () => {
+    function handleSubmit(e){
+        e.preventDefault();
+        window.location.replace("/user-management");
     }
 
 return(
     <section className="user-login-section">
         <div className="user-form-container">
 
-            <form className="user-login-form">
+            <form className="user-login-form" onSubmit={handleSubmit}>
                 <img src={Logo} alt="sorry" className="logo"/>
 
                 <h1>Log In</h1>

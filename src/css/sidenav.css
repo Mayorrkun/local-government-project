@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     width: 20vw;
-    padding: 10px 30px 50px 10px;
+    padding: 10px 30px 10px 10px;
     border: 1px solid #d1d5db;
 }
 
@@ -17,15 +17,33 @@
     gap:10px;
 
 }
-.sidenav-logo > img {
-
+.sidenav-logo img {
     width: 156px;
     height: 26px;
 }
-.sidenav-logo > input {
+.sidenav-logo-search {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    position: relative;
+    z-index: 0;
+}
+
+
+.sidenav-logo-search > input {
     border: 1px solid #d1d5db;
     border-radius: 6px;
-    padding: 8px 10px;
+    padding: 8px 10px 8px 34px;
+    font-size: 16px;
+}
+
+.input-icon{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #cccccc;
+    pointer-events: none;
 }
 
 /**/
@@ -42,6 +60,9 @@
 }
 
 .sidenav-menu > li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     padding: 10px ;
     border:none;
     border-radius: 5px;
@@ -52,7 +73,7 @@
 }
 
 .sidenav-end{
-    margin: auto 0 30px 0;
+    margin: auto 0 0 0;
 }
 .sidenav-end > ul {
     margin-top: auto;

@@ -12,3 +12,12 @@
     height: 100vh;
     padding: 20px;
 }
+
+.main-nav{
+    display: flex;
+    flex-direction: row;
+}
+.main-nav > div {
+    display: flex;
+    flex-direction: column;
+}

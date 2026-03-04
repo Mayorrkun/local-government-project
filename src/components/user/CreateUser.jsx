@@ -1,5 +1,7 @@
 import "../../css/user/usercomponents.css"
 import Close from "../../media/close.png"
+import {UsersPlus} from "@untitled-ui/icons-react";
+
 export function CreateUser({handleShow}) {
 
     function onSubmit(e){
@@ -11,9 +13,8 @@ export function CreateUser({handleShow}) {
             <div className="user-container">
                 <div className="user-container-header">
                     <p className="user-container-p">
-                    <span className="icon">
+                        <UsersPlus />
 
-                    </span>
                         Create User
                     </p>
                     <button onClick={handleShow}><img src={Close} alt="" className="close-icon"/></button>
