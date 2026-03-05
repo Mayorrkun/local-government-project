@@ -2,10 +2,12 @@ import "../../css/user/usercomponents.css"
 import Close from "../../media/close.png"
 import {UsersPlus} from "@untitled-ui/icons-react";
 
-export function ViewUser({handleShow}) {
+export function ViewUser({handleShow, user, handleEditUser}) {
 
     function onSubmit(e){
         e.preventDefault();
+        handleEditUser(user);
+
     }
     return(
         <div className="back-blur">
@@ -24,15 +26,15 @@ export function ViewUser({handleShow}) {
                 <form onSubmit={onSubmit} className="user-form">
                     <p>
                         <label htmlFor="">First Name</label>
-                        <span>Jane</span>
+                        <span>{user.first_name}</span>
                     </p>
                     <p>
                         <label htmlFor="">Last Name</label>
-                        <span>Doe</span>
+                        <span>{user.last_name}</span>
                     </p>
                     <p>
                         <label htmlFor="">Email</label>
-                        <span>janedoe@email.com</span>
+                        <span>{user.email}</span>
                     </p>
                     <p>
                         <label htmlFor="">Phone Number</label>
@@ -40,15 +42,15 @@ export function ViewUser({handleShow}) {
                     </p>
                     <p>
                         <label htmlFor="">Role</label>
-                        <span>Staff</span>
+                        <span>{user.role}</span>
                     </p>
                     <p>
                         <label htmlFor="">Status</label>
-                        <span>Active</span>
+                        <span>{user.status}</span>
                     </p>
 
                     <div className="button-section">
-                        <button className="cancel" type="button" onClick={handleShow}>Cancel</button> <button className="submit" type="submit">Save</button>
+                        <button className="cancel" type="button" onClick={handleShow}>Cancel</button> <button className="submit" type="submit">Edit</button>
                     </div>
                 </form>
 

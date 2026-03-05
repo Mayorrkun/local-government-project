@@ -11,13 +11,196 @@
     width: 80vw;
     height: 100vh;
     padding: 20px;
+    overflow: scroll;
 }
 
 .main-nav{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 .main-nav > div {
     display: flex;
     flex-direction: column;
+  padding: 0;
+}
+.main-nav > div > p {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    color: #717680;
+}
+.main-nav > div > h2 {
+    margin: 0;
+}
+.main-nav > div > p > span {
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    background: #d1d5db;
+}
+
+.arrow-right{
+    width: 10px;
+    height: 10px;
+}
+
+.main-nav-end{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 0;
+    gap: 10px;
+}
+
+.main-nav-end > li {
+    font-size: 13px;
+    font-weight: 600;
+    color: #717680;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    padding: 5px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.green-dot{
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    background-color: #17b26a;
+}
+
+/*table*/
+.users-table{
+    width: 100%;
+    min-height: 100%;
+}
+.users-table > thead > tr > th {
+    font-size: 12px;
+    font-weight: 600;
+    color: #717680;
+    width: calc(100% / 5);
+    text-align: start;
+    background-color: #fafafa;
+    gap: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #cccccc;
+    border-collapse: collapse;
+    white-space: nowrap;
+
+}
+.users-table > thead > tr > th:first-child {
+    display: flex;
+    align-items: center;
+    color: #3d2b7a;
+    font-weight: bold;
+}
+.users-table > tbody > tr > td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.users-table > tbody > tr > td {
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 400;
+    padding: 10px 10px;
+    height: 25px;
+    color: #717680;
+}
+
+/* Hide default checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #cccccc;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Checked state */
+input[type="checkbox"]:checked {
+    background-color: #3d2b7a; /* dark purple */
+    border-color: #3d2b7a;
+}
+
+/* Checkmark */
+input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid #ffffff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+/* Indeterminate state (the minus icon for "3 selected") */
+input[type="checkbox"]:indeterminate {
+    background-color: #3d2b7a;
+    border-color: #3d2b7a;
+}
+
+input[type="checkbox"]:indeterminate::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    width: 10px;
+    height: 2px;
+    background-color: #ffffff;
+}
+/*pagination*/
+.pagination-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:  5px 10px;
+    margin-bottom: 20px;
+}
+.pagination-area > button{
+    padding: 8px 8px;
+    width: 100px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: white;
+    color: #414651;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.pagination-area > button:disabled {
+    color: #717680;
+    cursor: not-allowed;
+}
+
+
+.pages{
+    display: flex;
+    gap: 10px;
+}
+.pages > button{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
 }

@@ -4,6 +4,7 @@ import {Register} from "./auth/Register.jsx";
 import {SuperLogin} from "./super-admin/Login.jsx";
 import {Routes, Route} from 'react-router-dom'
 import {Onboarding} from "./Onboarding.jsx";
+import Home from "./user/Home.jsx";
 import UserManagement from "./user/UserManagement.jsx";
 import RoleManagement from "./user/RoleManagement.jsx";
 export default function Main(){
@@ -11,6 +12,7 @@ export default function Main(){
 
     return (<>
         <Routes>
+            <Route path="/" element={<Home/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>
             <Route path='/super-admin/login' element={<SuperLogin/>}/>
