@@ -141,3 +141,45 @@
 }
 
 /*Roles and permissions*/
+
+.users-search {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    position: relative;
+    z-index: 0;
+}
+
+
+.users-search > input {
+    width: 25vw;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 10px 8px 34px;
+    font-size: 16px;
+}
+
+.users-info > p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.users-info > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.users-info > div > button {
+    border: none;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    gap: 5px;
+    cursor: pointer;
+}

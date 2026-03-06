@@ -5,7 +5,16 @@ import {useState} from "react";
 import {CreateUser} from "../../components/user/CreateUser.jsx";
 import {EditUser} from "../../components/user/EditUser.jsx";
 import {ViewUser} from "../../components/user/ViewUser.jsx";
-import {ChevronRight, Copy01, Share04, ChevronSelectorVertical, ArrowRight, ArrowLeft, DotsVertical} from "@untitled-ui/icons-react";
+import {
+    ChevronRight,
+    Copy01,
+    Share04,
+    ChevronSelectorVertical,
+    ArrowRight,
+    ArrowLeft,
+    DotsVertical,
+    SearchLg, Plus
+} from "@untitled-ui/icons-react";
 
 export default function UserManagement() {
     const itemsPerPage = 10;
@@ -89,7 +98,20 @@ export default function UserManagement() {
                         <li>Visit store <Share04 style={{width:"12px", height:"12px"}} /></li>
                     </ul>
                 </nav>
-                <div className="main-info"></div>
+                <div className="users-info">
+                    <p>Users</p>
+                    <div>
+                        <div className="users-search">
+                            <SearchLg className="input-icon"/>
+                            <input type="search" placeholder="Search"/>
+                        </div>
+
+                        <button>
+                            <Plus style={{width:"20px",height:"20px" }}/> Create User
+                        </button>
+                    </div>
+
+                </div>
                 <div className="main-table">
                     <div>
 
