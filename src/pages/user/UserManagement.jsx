@@ -140,21 +140,22 @@ export default function UserManagement() {
                         </tbody>
                     </table>
 
-                    {
-                        users.length > 10 ? <div className="pagination-area">
-                            <button onClick={handleprevious} disabled={firstPage}> <ArrowLeft style={{width:"16px", height:"16px"}} /> Previous</button>
-                            <div className="pages">
-                                {
-                                    Array.from({length:pages}).map((item, i) =>(
-                                        <button disabled={(i+1) === currentPage} onClick={() => {setCurrentPage(i+1)}} >{i+1}</button>
-                                    ))
-                                }
-                            </div>
-                            <button onClick={handlenext} disabled={lastPage}>Next<ArrowRight style={{width:"16px", height:"16px"}} /></button>
-                        </div> : null
-                    }
+
 
                 </div>
+                {
+                    users.length > 10 ? <div className="pagination-area">
+                        <button onClick={handleprevious} disabled={firstPage}> <ArrowLeft style={{width:"16px", height:"16px"}} /> Previous</button>
+                        <div className="pages">
+                            {
+                                Array.from({length:pages}).map((item, i) =>(
+                                    <button disabled={(i+1) === currentPage} onClick={() => {setCurrentPage(i+1)}} >{i+1}</button>
+                                ))
+                            }
+                        </div>
+                        <button onClick={handlenext} disabled={lastPage}>Next<ArrowRight style={{width:"16px", height:"16px"}} /></button>
+                    </div> : null
+                }
             </main>
         </section>
     )

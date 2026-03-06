@@ -11,7 +11,6 @@
     width: 80vw;
     height: 100vh;
     padding: 20px;
-    overflow: scroll;
 }
 
 .main-nav{
@@ -78,6 +77,10 @@
 }
 
 /*table*/
+.main-table{
+    max-height: 60vh;
+    overflow-y: scroll;
+}
 .users-table{
     width: 100%;
     min-height: 100%;
