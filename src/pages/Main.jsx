@@ -17,7 +17,7 @@ export default function Main(){
             <Route path='/register' element={<Register/>}/>
             <Route path='/super-admin/login' element={<SuperLogin/>}/>
             <Route path='/onboarding' element={<Onboarding/>}></Route>
-            <Route path='/user-management' element={<UserManagement/>} />
+            <Route path='/users-management' element={<UserManagement/>} />
             <Route path='/role-management' element={<RoleManagement/>} />
         </Routes>
    </>)

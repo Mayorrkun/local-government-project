@@ -1,9 +1,17 @@
 import Logo from "../media/logo.png"
 import "../css/sidenav.css"
 import {SearchLg, HomeLine,BarChartSquare01,Rows01,Users01} from "@untitled-ui/icons-react";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 export default function SideNav() {
+    const path = useLocation().pathname;
+
+    function isActive(pathMatch){
+        if(pathMatch === "/"){
+            return path === "/";
+        }
+        return path.startsWith(pathMatch);
+    }
 
     return (<nav className="sidenav">
     <div className="sidenav-logo">
@@ -15,10 +23,10 @@ export default function SideNav() {
 
     </div>
         <ul className="sidenav-menu">
-            <li> <HomeLine/> Home</li>
-            <li> <BarChartSquare01/> Dashboard</li>
-            <li className="active" > <Users01/> Users management</li>
-            <li> <Rows01/> Role management</li>
+            <li><Link  className={isActive("/home") ? "active": ""} to="/home"><HomeLine/> Home</Link> </li>
+            <li><Link  className={isActive("/dashboard") ? "active": ""} to="/dashboard"><BarChartSquare01/> Dashboard</Link> </li>
+            <li><Link  className={isActive("/users-management") ? "active": ""} to="/users-management"><Users01/> Users management</Link></li>
+            <li><Link  className={isActive("/role-management") ? "active": ""} to="/role-management"><Rows01/> Role management</Link> </li>
         </ul>
 
         <div className="sidenav-end">

@@ -51,7 +51,7 @@
 .sidenav-menu {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     list-style: none;
     padding: 0;
     color: #414651;
@@ -60,16 +60,21 @@
 }
 
 .sidenav-menu > li {
+    border:none;
+    border-radius: 5px;
+}
+.sidenav-menu > li > a {
+    color: #717680;
     display: flex;
     align-items: center;
     gap: 5px;
     padding: 10px ;
-    border:none;
-    border-radius: 5px;
+    text-decoration: none;
 }
 
 .active {
     background-color: #e9eaeb;
+    border-radius: 6px;
 }
 
 .sidenav-end{
@@ -91,6 +96,7 @@
     border:none;
     border-radius: 5px;
 }
+
 
 .nav-profile{
     display: flex;
