@@ -23,8 +23,8 @@ export default function SideNav() {
 
     </div>
         <ul className="sidenav-menu">
-            <li><Link  className={isActive("/home") ? "active": ""} to="/home"><HomeLine/> Home</Link> </li>
-            <li><Link  className={isActive("/dashboard") ? "active": ""} to="/dashboard"><BarChartSquare01/> Dashboard</Link> </li>
+            <li><Link  className={isActive("/home") ? "active": ""} to="/"><HomeLine/> Home</Link> </li>
+            <li><Link  className={isActive("/dashboard") ? "active": ""} to="/"><BarChartSquare01/> Dashboard</Link> </li>
             <li><Link  className={isActive("/user-management") ? "active": ""} to="/user-management"><Users01/> Users management</Link></li>
             <li><Link  className={isActive("/role-management") ? "active": ""} to="/role-management"><Rows01/> Role management</Link> </li>
         </ul>
