@@ -1,7 +1,8 @@
 export const roles =[
-    {title:"Admin"},
-    {title:"Staff"},
-    {title:"User"}
+    {id:1, title:"Admin",description:"Platform Admin",createdDate:"Mar 6, 2026 2:26PM"},
+    {id:2, title:"Staff",description:"Company Staff",createdDate:"Mar 6, 2026 2:26PM"},
+    {id:3, title:"User",description:"General user",createdDate:"Mar 6, 2026 2:26PM"},
+    {id:4, title:"Visitor",description:"Visitor",createdDate:"Mar 6, 2026 2:26PM"}
 ];
 
 export const users = [

@@ -1,11 +1,23 @@
-import {users} from "../../js/data.js";
+import {roles, users} from "../../js/data.js";
 import SideNav from "../../components/sidenav.jsx";
 import "../../css/user/userprocess.css";
 import {useState} from "react";
 import {CreateUser} from "../../components/user/CreateUser.jsx";
 import {EditUser} from "../../components/user/EditUser.jsx";
 import {ViewUser} from "../../components/user/ViewUser.jsx";
-import {ChevronRight, Copy01, Share04, ChevronSelectorVertical, ArrowRight, ArrowLeft, DotsVertical} from "@untitled-ui/icons-react";
+import "../../css/role/rolecomponents.css"
+import "../../css/role/roleprocesses.css"
+import {
+    ChevronRight,
+    Copy01,
+    Share04,
+    ChevronSelectorVertical,
+    ArrowRight,
+    ArrowLeft,
+    DotsVertical,
+    Plus,
+    SearchLg
+} from "@untitled-ui/icons-react";
 
 export default function UserManagement() {
     const itemsPerPage = 10;
@@ -38,14 +50,13 @@ export default function UserManagement() {
     function paginate(){
 
 
-        return users.slice((currentPage - 1)*itemsPerPage , itemsPerPage*currentPage).map(user => (
-            <tr key={user.id}>
-                <td style={{color:"#000000", fontWeight:"500"}}><input id="selected-user" value={user.id} onChange={() => handleSelected(user.id)} type="checkbox"/> <span onClick={() => handleShowView(user.id)}>{user.first_name} {user.last_name}</span></td>
-                <td >{user.email}</td>
-                <td><span>{user.status}</span></td>
-                <td><span>{user.role}</span></td>
+        return roles.slice((currentPage - 1)*itemsPerPage , itemsPerPage*currentPage).map(role => (
+            <tr key={role.id}>
+                <td style={{color:"#000000", fontWeight:"500"}}><input id="selected-user" value={role.id} onChange={() => handleSelected(role.id)} type="checkbox"/> <span onClick={() => handleShowView(role.id)}>{role.title}</span></td>
+                <td >{role.description}</td>
+                <td><span></span></td>
                 <td style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
-                    <span>{user.last_login}</span>
+                    <span>{role.createdDate}</span>
                     <button style={{backgroundColor:"transparent",border:"none",cursor:"pointer"}}>
                         <DotsVertical style={{width:"15px",height:"15px"}}/></button></td>
             </tr>
@@ -75,8 +86,8 @@ export default function UserManagement() {
                             <span></span>
                             Olivia Rhye
                             <ChevronRight className="arrow-right"/>
-                            Users management </p>
-                        <h2>Users management</h2>
+                            role management </p>
+                        <h2>Role management</h2>
                     </div>
 
                     <ul className="main-nav-end">
@@ -85,24 +96,34 @@ export default function UserManagement() {
                         <li>Visit store <Share04 style={{width:"12px", height:"12px"}} /></li>
                     </ul>
                 </nav>
-                <div className="main-info"></div>
+                <div className="role-info">
+                    <p>Role</p>
+                    <div>
+                        <div className="role-search">
+                            <SearchLg className="input-icon"/>
+                            <input type="search" placeholder="Search"/>
+                        </div>
+
+                        <button>
+                            <Plus style={{width:"20px",height:"20px" }}/> Create Role
+                        </button>
+                    </div>
+
+                </div>
                 <div className="main-table">
                     <div>
 
                     </div>
-                    <table className="users-table">
+                    <table className="role-table">
                         <thead>
                         <tr>
                             <th><div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                                <input type="checkbox" ref={el => {
-                                    if (el) el.indeterminate = true;
-                                }}/> Selected ({selected.length}) <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/>
+                                 Role <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/>
                             </div>
                             </th>
-                            <th>Email Address <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
-                            <th>Account status <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
-                            <th>Role <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
-                            <th>Last Login <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
+                            <th>Description <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
+                            <th>Assigned Users <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
+                            <th>Created Date <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
 
                         </tr>
                         </thead>
@@ -114,17 +135,20 @@ export default function UserManagement() {
                         </tbody>
                     </table>
 
-                    <div className="pagination-area">
-                        <button onClick={handleprevious} disabled={firstPage}> <ArrowLeft style={{width:"16px", height:"16px"}} /> Previous</button>
-                        <div className="pages">
-                            {
-                                Array.from({length:pages}).map((item, i) =>(
-                                    <button disabled={(i+1) === currentPage} onClick={() => {setCurrentPage(i+1)}} >{i+1}</button>
-                                ))
-                            }
-                        </div>
-                        <button onClick={handlenext} disabled={lastPage}>Next<ArrowRight style={{width:"16px", height:"16px"}} /></button>
-                    </div>
+                    {
+                        roles.length > 10 ? <div className="pagination-area">
+                            <button onClick={handleprevious} disabled={firstPage}> <ArrowLeft style={{width:"16px", height:"16px"}} /> Previous</button>
+                            <div className="pages">
+                                {
+                                    Array.from({length:pages}).map((item, i) =>(
+                                        <button disabled={(i+1) === currentPage} onClick={() => {setCurrentPage(i+1)}} >{i+1}</button>
+                                    ))
+                                }
+                            </div>
+                            <button onClick={handlenext} disabled={lastPage}>Next<ArrowRight style={{width:"16px", height:"16px"}} /></button>
+                        </div> : null
+                    }
+
                 </div>
             </main>
         </section>

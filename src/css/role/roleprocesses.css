@@ -1,0 +1,100 @@
+.role-search {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    position: relative;
+    z-index: 0;
+}
+
+
+.role-search > input {
+    width: 25vw;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 10px 8px 34px;
+    font-size: 16px;
+}
+
+/*table*/
+.role-table{
+    width: 100%;
+    min-height: 100%;
+}
+.role-table > thead > tr > th {
+    font-size: 12px;
+    font-weight: 600;
+    color: #717680;
+    width: calc(100% / 4);
+    text-align: start;
+    background-color: #fafafa;
+    gap: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #cccccc;
+    border-collapse: collapse;
+    white-space: nowrap;
+
+}
+
+.role-table > tbody > tr > td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.role-table > tbody > tr > td {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    padding: 10px 10px;
+    height: 25px;
+    color: #717680;
+}
+
+/* Hide default checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #cccccc;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Checked state */
+input[type="checkbox"]:checked {
+    background-color: #3d2b7a; /* dark purple */
+    border-color: #3d2b7a;
+}
+
+/* Checkmark */
+input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid #ffffff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+/* Indeterminate state (the minus icon for "3 selected") */
+input[type="checkbox"]:indeterminate {
+    background-color: #3d2b7a;
+    border-color: #3d2b7a;
+}
+
+input[type="checkbox"]:indeterminate::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    width: 10px;
+    height: 2px;
+    background-color: #ffffff;
+}

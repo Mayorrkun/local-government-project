@@ -1,0 +1,167 @@
+/*components*/
+.back-blur{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(29, 29, 29, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    z-index: 5;
+
+}
+
+.role-container{
+    opacity: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 26vw;
+    height: auto;
+    padding: 20px 20px;
+}
+.role-container-header{
+    display: flex;
+    padding: 0 10px;
+
+}
+.role-container-p {
+    color: #000;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+.role-container-header > button{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0 0 0 auto;
+    height: 15px;
+    width: 15px;
+}
+
+.close-icon{
+    margin-left: auto;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+.icon{
+    width: 12px;
+    height: 12px;
+    padding: 5px;
+    border: 1px solid #717680;
+    border-radius: 5px;
+
+}
+
+/*Form css*/
+.role-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+}
+.role-form > p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 5px;
+}
+.role-form > p > label{
+    color: #414651;
+    font-weight: 500;
+    font-size: 14px;
+}
+.role-form > p > input{
+    border: 1px solid #717680;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 14px;
+}
+.role-form > p > select{
+    border: 1px solid #717680;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 14px;
+    appearance: none;
+    outline: none;
+    background-image: url("../../media/chevrondown.png");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 10px auto;
+    color: #717680;
+}
+.role-form > p > span{
+    font-size: 14px;
+}
+
+.role-form > p > textarea{
+    border: 1px solid #717680;
+    border-radius: 6px;
+    font-family: "Inter";
+    font-size: 14px;
+    padding: 7px 10px;
+}
+
+.button-section{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.submit{
+    width: 48%;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.cancel{
+    color: #000000;
+    background-color: #ffffff;
+    width: 48%;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 10px 10px;
+    font-size: 15px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/*Roles and permissions*/
+
+.role-info > p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.role-info > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.role-info > div > button{
+    border: none;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    gap: 5px;
+    cursor: pointer;
+}
