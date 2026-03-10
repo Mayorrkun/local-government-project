@@ -165,3 +165,52 @@
     gap: 5px;
     cursor: pointer;
 }
+
+.permission-container-div {
+    border-bottom: 1px solid #cccccc;
+}
+.permission-container-div > summary{
+    list-style: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #717680;
+}
+
+.permission-container-div > p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in ;
+}
+
+.permission-container-div > p > span{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #717680;
+    padding: 5px;
+    border-radius: 5px;
+}
+.permission-container-div[open] > p {
+    max-height: 300px;
+}
+.arrow-down{
+    width: 16px;
+    height: 16px;
+    color: #717680;
+}
+
+.permission-container-div .arrow-down {
+    transition: transform 0.5s ease-in;
+}
+.permission-container-div[open] .arrow-down {
+    transform: rotate(180deg);
+}

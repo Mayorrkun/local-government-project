@@ -1,6 +1,8 @@
-import "../../css/user/usercomponents.css"
+import "../../css/role/rolecomponents.css"
+import "../../css/role/roleprocesses.css"
 import Close from "../../media/close.png"
-import {UsersPlus} from "@untitled-ui/icons-react";
+import {UsersPlus, ChevronDown} from "@untitled-ui/icons-react";
+import {userPermissions, rolePermissions} from "../../js/data.js";
 
 export function CreateRole({handleShow}) {
 
@@ -10,9 +12,9 @@ export function CreateRole({handleShow}) {
     return(
         <div className="back-blur">
 
-            <div className="user-container">
-                <div className="user-container-header">
-                    <p className="user-container-p">
+            <div className="role-container">
+                <div className="role-container-header">
+                    <p className="role-container-p">
                         <UsersPlus />
 
                         Create Role
@@ -21,7 +23,7 @@ export function CreateRole({handleShow}) {
 
 
                 </div>
-                <form onSubmit={onSubmit} className="user-form">
+                <form onSubmit={onSubmit} className="role-form">
                     <p>
                         <label htmlFor="">Role Name</label>
                         <input type="text" placeholder="Enter Role name"/>
@@ -33,18 +35,33 @@ export function CreateRole({handleShow}) {
 
                     <div className="permission-container">
                         <span>Select Permissions</span>
-                        <div className="permission-container-div">
-                            <p></p>
-                        </div>
-                        <div className="permission-container-div">
-                            <p></p>
-                        </div>
+                        <details className="permission-container-div">
+                            <summary><span>User management</span> <ChevronDown className="arrow-down"/></summary>
+                            <p>
+                                {
+                                    userPermissions.map(permission =>(
+                                        <span key={permission.id}><input type="checkbox" className="permission-check" value={permission.title}/>{permission.title}</span>
+                                    ))
+                                }
+
+                            </p>
+                        </details>
+                        <details className="permission-container-div">
+                            <summary><span>Role management</span> <ChevronDown className="arrow-down"/></summary>
+                            <p>
+                                {
+                                    rolePermissions.map(permission =>(
+                                        <span key={permission.id}><input type="checkbox"/>{permission.title}</span>
+                                    ))
+                                }
+                            </p>
+                        </details>
 
 
                     </div>
 
                     <div className="button-section">
-                        <button className="cancel" type="button" onClick={handleShow}>Cancel</button> <button className="submit" type="submit">Create User</button>
+                        <button className="cancel" type="button" onClick={handleShow}>Cancel</button> <button className="submit" type="submit">Create Role</button>
                     </div>
                 </form>
 

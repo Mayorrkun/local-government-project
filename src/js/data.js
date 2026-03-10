@@ -5,6 +5,20 @@ export const roles =[
     {id:4, title:"Visitor",description:"Visitor",createdDate:"Mar 6, 2026 2:26PM"}
 ];
 
+export const userPermissions=[
+    {id:1, title:"Create User"},
+    {id:2, title:"View User List"},
+    {id:3, title:"Access Restricted Pages"},
+    {id:4, title:"Deactivate User"},
+    {id:5, title:"Assign Role"},
+]
+export const rolePermissions=[
+    {id:1, title:"Create Role"},
+    {id:2, title:"View Role List"},
+    {id:3, title:"Access Restricted Pages"},
+    {id:4, title:"Deactivate Role"},
+    {id:5, title:"Assign User"},
+]
 export const users = [
     { id: 1, first_name: "John", last_name: "Doe", email: "john.doe@email.com", status: "Active", role: "Admin", last_login: "2026-03-01 09:14" },
     { id: 2, first_name: "Sarah", last_name: "Johnson", email: "sarah.johnson@email.com", status: "Inactive", role: "User", last_login: "2026-02-25 14:22" },
