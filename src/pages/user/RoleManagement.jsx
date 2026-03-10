@@ -27,6 +27,7 @@ export default function RoleManagement() {
     const [showEditRole, setShowEditRole] = useState(false);
     const [showCreateRole, setShowCreateRole] = useState(false);
 
+    const [showRole, setShowRole] = useState({});
     const [selected, setSelected] = useState([]);
     const firstPage = currentPage === 1;
     const lastPage =  currentPage === pages
@@ -58,7 +59,7 @@ export default function RoleManagement() {
                 <td><span></span></td>
                 <td style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
                     <span>{role.createdDate}</span>
-                    <button style={{backgroundColor:"transparent",border:"none",cursor:"pointer"}}>
+                    <button onClick={() => handleViewRole(role.id)} style={{backgroundColor:"transparent",border:"none",cursor:"pointer"}}>
                         <DotsVertical style={{width:"15px",height:"15px"}}/></button></td>
             </tr>
         ))
@@ -67,14 +68,22 @@ export default function RoleManagement() {
         setShowCreateRole(prev => !prev)
     }
 
+    function handleViewRole(id){
+        const foundRole = roles.find(role => role.id === id);
+        setShowRole(foundRole);
+        setShowViewRole(prev => !prev)
+    }
     function handleEditRole(){
-
+        setShowViewRole(false);
+        setShowEditRole(prevShow => !prevShow);
     }
 
     console.log(selected)
     return(
         <section className="general-section">
             {showCreateRole ? <CreateRole handleShow={handleShowCreate}/> : null}
+            {showViewRole ? <ViewRole handleShow={handleViewRole} handleEdit={handleEditRole} role={showRole}/>: null}
+            {showEditRole ? <EditRole handleShow={handleEditRole} role={showRole}/>: null}
             <SideNav/>
             <main className="main-container">
                 <nav className="main-nav">

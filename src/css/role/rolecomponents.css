@@ -214,3 +214,17 @@
 .permission-container-div[open] .arrow-down {
     transform: rotate(180deg);
 }
+
+.permission{
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #717680;
+    padding: 5px;
+    border-radius: 5px;
+}
+.permission-div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 10px;
+    margin: 10px 0;
+}

@@ -104,7 +104,7 @@ export default function CompanyManagement() {
                         </div>
 
                         <button onClick={handleShowCreate}>
-                            <Plus style={{width:"20px",height:"20px" }}/> Create User
+                            <Plus style={{width:"20px",height:"20px" }}/> Create Company
                         </button>
                     </div>
 

@@ -1,9 +1,9 @@
 import "../../css/user/usercomponents.css"
 import Close from "../../media/close.png"
 import {UsersPlus} from "@untitled-ui/icons-react";
-import{roles} from "../../js/data.js";
+import {rolePermissions, userPermissions} from "../../js/data.js";
 
-export function EditRole({handleEditUser, user}) {
+export function EditRole({handleShow,role}) {
 
     function onSubmit(e){
         e.preventDefault();
@@ -18,48 +18,48 @@ export function EditRole({handleEditUser, user}) {
 
                         Edit User
                     </p>
-                    <button onClick={handleEditUser}><img src={Close} alt="" className="close-icon"/></button>
+                    <button onClick={handleShow}><img src={Close} alt="" className="close-icon"/></button>
 
 
                 </div>
                 <form onSubmit={onSubmit} className="user-form">
                     <p>
-                        <label htmlFor="">First Name</label>
-                        <input type="text" placeholder={user.first_name}/>
+                        <label htmlFor="">Role Name</label>
+                        <input type="text" placeholder={role.title}/>
                     </p>
                     <p>
-                        <label htmlFor="">Last Name</label>
-                        <input type="text" placeholder={user.last_name}/>
+                        <label htmlFor="">Description</label>
+                        <textarea>{role.description}</textarea>
                     </p>
                     <p>
-                        <label htmlFor="">Email</label>
-                        <input type="email" placeholder={user.email}/>
+                        <label htmlFor="">Permissions</label>
+                        <span>Users Management</span>
+                        <article className="permission-div">
+                            {userPermissions.map(
+                                permission => (
+                                    <span className="permission" style={{display:"flex",alignItems:"center",gap:"5px"}} key={permission.id}>
+                                        <input checked type="checkbox"/>
+                                        {permission.title}
+                                    </span>
+                                )
+                            )}
+                        </article>
+                        <span>Role Management</span>
+                        <article className="permission-div">
+                            {rolePermissions.map(
+                                permission => (
+                                    <span className="permission" style={{display:"flex",alignItems:"center",gap:"5px"}} key={permission.id}>
+                                           <input checked type="checkbox"/> {permission.title}
+                                    </span>
+                                )
+                            )}
+                        </article>
                     </p>
-                    <p>
-                        <label htmlFor="">Phone Number</label>
-                        <input type="number" placeholder="Enter Phone Number"/>
-                    </p>
-                    <p>
-                        <label htmlFor="">Role</label>
-                        <select name="" id="">
-                            <option selected value={user.role}>{user.role}</option>
-                            {roles.filter(role => role.title !== user.role)
-                                .map((role, index) => (
-                                    <option key={index} value={role.title}>{role.title}</option>
-                                ))}
-                        </select>
-                    </p>
-                    <p>
-                        <label htmlFor="">Status</label>
-                        <select name="" id="">
-                            <option disabled selected value="">{user.status}</option>
-                        </select>
-                    </p>
-
                     <div className="button-section">
-                        <button className="cancel" type="button" onClick={handleEditUser}>Cancel</button> <button className="submit" type="submit">Save</button>
+                        <button className="cancel" type="button" onClick={handleShow}>Cancel</button> <button className="submit" type="submit">Edit</button>
                     </div>
                 </form>
+
 
             </div>
 

@@ -50,7 +50,7 @@ export default function UserManagement() {
 
         return users.slice((currentPage - 1)*itemsPerPage , itemsPerPage*currentPage).map(user => (
                 <tr key={user.id} style={{backgroundColor:(user.id % 2) === 0 ? "#FFFFFF": "#fafafa"}} >
-                <td style={{color:"#000000", fontWeight:"500"}}><input id="selected-user" value={user.id} onChange={() => handleSelected(user.id)} type="checkbox"/> <span onClick={() => handleShowView(user.id)}>{user.first_name} {user.last_name}</span></td>
+                <td style={{color:"#000000", fontWeight:"500"}}><input id="selected-user" value={user.id} onChange={() => handleSelected(user.id)} type="checkbox"/> <span>{user.first_name} {user.last_name}</span></td>
                 <td >{user.email}</td>
                 <td style={{display:"flex"}}><span style={{backgroundColor:(user.status.toLowerCase() === "active" ? "#ebfac7" : (user.status.toLowerCase() === "inactive") ? "#ffefef" : null),
                     color: (user.status.toLowerCase() === "active" ? "#336C0D" : (user.status.toLowerCase() === "inactive") ? "#891810" : null),
@@ -63,7 +63,7 @@ export default function UserManagement() {
 
                 <td style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
                     <span>{user.last_login}</span>
-                    <button style={{backgroundColor:"transparent",border:"none",cursor:"pointer"}}>
+                    <button onClick={() => handleShowView(user.id)} style={{backgroundColor:"transparent",border:"none",cursor:"pointer"}}>
                         <DotsVertical style={{width:"15px",height:"15px"}}/></button></td>
             </tr>
         ))

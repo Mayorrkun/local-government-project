@@ -1,12 +1,13 @@
 import "../../css/user/usercomponents.css"
 import Close from "../../media/close.png"
 import {UsersPlus} from "@untitled-ui/icons-react";
+import {userPermissions,rolePermissions} from "../../js/data.js";
 
-export function ViewRole({handleShow, user, handleEditUser}) {
+export function ViewRole({handleShow, role, handleEdit}) {
 
     function onSubmit(e){
         e.preventDefault();
-        handleEditUser(user);
+        handleEdit(role);
 
     }
     return(
@@ -17,7 +18,7 @@ export function ViewRole({handleShow, user, handleEditUser}) {
                     <p className="user-container-p">
                         <UsersPlus />
 
-                        User Details
+                        Role Details
                     </p>
                     <button onClick={handleShow}><img src={Close} alt="" className="close-icon"/></button>
 
@@ -25,30 +26,36 @@ export function ViewRole({handleShow, user, handleEditUser}) {
                 </div>
                 <form onSubmit={onSubmit} className="user-form">
                     <p>
-                        <label htmlFor="">First Name</label>
-                        <span>{user.first_name}</span>
+                        <label htmlFor="">Role Name</label>
+                        <span>{role.title}</span>
                     </p>
                     <p>
-                        <label htmlFor="">Last Name</label>
-                        <span>{user.last_name}</span>
+                        <label htmlFor="">Description</label>
+                        <span>{role.description}</span>
                     </p>
                     <p>
-                        <label htmlFor="">Email</label>
-                        <span>{user.email}</span>
+                        <label htmlFor="">Permissions</label>
+                        <span>Users Management</span>
+                        <article className="permission-div">
+                            {userPermissions.map(
+                                permission => (
+                                    <span className="permission" key={permission.id}>
+                                        {permission.title}
+                                    </span>
+                                )
+                            )}
+                        </article>
+                        <span>Role Management</span>
+                        <article className="permission-div">
+                            {rolePermissions.map(
+                                permission => (
+                                    <span className="permission" key={permission.id}>
+                                        {permission.title}
+                                    </span>
+                                )
+                            )}
+                        </article>
                     </p>
-                    <p>
-                        <label htmlFor="">Phone Number</label>
-                        <span>09090909090</span>
-                    </p>
-                    <p>
-                        <label htmlFor="">Role</label>
-                        <span>{user.role}</span>
-                    </p>
-                    <p>
-                        <label htmlFor="">Status</label>
-                        <span>{user.status}</span>
-                    </p>
-
                     <div className="button-section">
                         <button className="cancel" type="button" onClick={handleShow}>Cancel</button> <button className="submit" type="submit">Edit</button>
                     </div>
