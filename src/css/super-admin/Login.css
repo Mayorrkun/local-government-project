@@ -26,6 +26,12 @@ width: 100vw;
     border-radius: 4px;
     padding: 7px 10px;
 }
+.super-input-holder > span{
+    font-size: 12px;
+    font-weight: 600;
+    color: #FF0033;
+    margin: 2px 0;
+}
 
 .super-logo{
     margin: 0 auto;

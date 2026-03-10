@@ -33,9 +33,12 @@ export function CreateRole({handleShow}) {
 
                     <div className="permission-container">
                         <span>Select Permissions</span>
-                        <p className="permission-container-p">
-
-                        </p>
+                        <div className="permission-container-div">
+                            <p></p>
+                        </div>
+                        <div className="permission-container-div">
+                            <p></p>
+                        </div>
 
 
                     </div>

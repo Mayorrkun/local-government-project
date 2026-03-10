@@ -3,23 +3,33 @@ import {useState} from "react";
 import {useNavigate, Link} from "react-router-dom";
 import "../../css/auth/login.css"
 import Logo from "../../media/logo.png"
-export function Login(){
-    const {login} = useAuth();
-    const navigate = useNavigate();
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+import {Validation} from "../../js/Validation.js";
 
-    function handleSubmit(e){
-        e.preventDefault();
-        window.location.replace("/user-management");
-    }
+export function Login(){
+    const validate = (values) => {
+        const errors = {};
+        if(!values.email){
+            errors.email = "Email is required";
+        }
+        else if (!/\S+@\S+\.\S+/.test(values.email)) {
+            errors.email = "Enter a valid email address";
+        }
+
+        if(values.password.length < 8){
+            errors.password = "Minimum of 8 characters long";
+        }
+        return errors;
+    };
+
+    const { values, errors, touched, handleChange, handleBlur, handleSubmit} = Validation(
+        {email: '', password: ''}, validate);
+
 
 return(
     <section className="user-login-section">
         <div className="user-form-container">
 
-            <form className="user-login-form" onSubmit={handleSubmit}>
+            <form className="user-login-form" onSubmit={handleSubmit(data => console.log(data), "/user-management")}>
                 <img src={Logo} alt="sorry" className="logo"/>
 
                 <h1>Log In</h1>
@@ -27,13 +37,15 @@ return(
 
                 <p className="input-holder">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email"/>
+                    <input type="email" name="email" value={values.email} onChange={handleChange} onBlur={handleBlur} id="email"/>
+                    {touched.email && errors.email && <span className="error">{errors.email}</span>}
 
                 </p>
 
                 <p className="input-holder">
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password"/>
+                    <input type="password" id="password" name="password"value={values.password} onChange={handleChange} onBlur={handleBlur} />
+                    {touched.password && errors.password && <span className="error">{errors.password}</span>}
 
                 </p>
 

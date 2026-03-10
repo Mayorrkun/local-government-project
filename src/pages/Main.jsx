@@ -7,6 +7,8 @@ import {Onboarding} from "./Onboarding.jsx";
 import Home from "./user/Home.jsx";
 import UserManagement from "./user/UserManagement.jsx";
 import RoleManagement from "./user/RoleManagement.jsx";
+import CompanyManagement from "./super-admin/CompanyManagement.jsx";
+import AuditLogs from "./super-admin/AuditLogs.jsx";
 export default function Main(){
     const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -19,6 +21,8 @@ export default function Main(){
             <Route path='/onboarding' element={<Onboarding/>}></Route>
             <Route path='/user-management' element={<UserManagement/>} />
             <Route path='/role-management' element={<RoleManagement/>} />
+            <Route path='/company-management' element={<CompanyManagement/>} />
+            <Route path='/audit-logs' element={<AuditLogs/>}></Route>
         </Routes>
    </>)
 

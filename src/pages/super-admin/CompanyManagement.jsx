@@ -1,10 +1,8 @@
-import {users} from "../../js/data.js";
+import {companies} from "../../js/data.js";
 import SideNav from "../../components/sidenav.jsx";
 import "../../css/user/userprocess.css";
 import {useState} from "react";
-import {CreateUser} from "../../components/user/CreateUser.jsx";
-import {EditUser} from "../../components/user/EditUser.jsx";
-import {ViewUser} from "../../components/user/ViewUser.jsx";
+
 import {
     ChevronRight,
     Copy01,
@@ -16,15 +14,14 @@ import {
     SearchLg, Plus
 } from "@untitled-ui/icons-react";
 
-export default function UserManagement() {
+export default function CompanyManagement() {
     const itemsPerPage = 10;
-    const pages = users.length / itemsPerPage;
+    const pages = companies.length / itemsPerPage;
     const [currentPage, setCurrentPage] = useState(1);
     const [showView, setShowView] = useState(false);
     const [showEdit, setShowEdit] = useState(false);
     const [showCreate, setShowCreate] = useState(false);
     const [selected, setSelected] = useState([]);
-    const [userShowed, setUserShowed] = useState(null);
     const firstPage = currentPage === 1;
     const lastPage =  currentPage === pages
     function handleprevious(){
@@ -34,7 +31,7 @@ export default function UserManagement() {
         lastPage ? null: setCurrentPage( (prevPage) => prevPage + 1);
     }
     function handleSelected(id){
-       selected.includes(id) ?
+        selected.includes(id) ?
             (
                 setSelected(prevSelected => prevSelected.filter(item => item !== id))
 
@@ -42,35 +39,32 @@ export default function UserManagement() {
             :
             (
                 setSelected(prevSelected => [...prevSelected, id ]
-            )
+                )
             )
     }
     function paginate(){
 
 
-        return users.slice((currentPage - 1)*itemsPerPage , itemsPerPage*currentPage).map(user => (
-                <tr key={user.id} style={{backgroundColor:(user.id % 2) === 0 ? "#FFFFFF": "#fafafa"}} >
-                <td style={{color:"#000000", fontWeight:"500"}}><input id="selected-user" value={user.id} onChange={() => handleSelected(user.id)} type="checkbox"/> <span onClick={() => handleShowView(user.id)}>{user.first_name} {user.last_name}</span></td>
-                <td >{user.email}</td>
-                <td style={{display:"flex"}}><span style={{backgroundColor:(user.status.toLowerCase() === "active" ? "#ebfac7" : (user.status.toLowerCase() === "inactive") ? "#ffefef" : null),
-                    color: (user.status.toLowerCase() === "active" ? "#336C0D" : (user.status.toLowerCase() === "inactive") ? "#891810" : null),
-                borderColor:(user.status.toLowerCase() === "active" ? "#336C0D" : (user.status.toLowerCase() === "inactive") ? "#891810" : null),
+        return companies.slice((currentPage - 1)*itemsPerPage , itemsPerPage*currentPage).map(company => (
+            <tr key={company.id} style={{backgroundColor:(company.id % 2) === 0 ? "#FFFFFF": "#fafafa"}} >
+                <td style={{color:"#000000", fontWeight:"500"}}><input id="selected-user" value={company.id} onChange={() => handleSelected(company.id)} type="checkbox"/> <span>{company.name}</span></td>
+                <td >{company.owner}</td>
+                <td><span>{company.userTotal}</span></td>
+                <td><span style={{backgroundColor:(company.status.toLowerCase() === "active" ? "#ebfac7" : (company.status.toLowerCase() === "deactivated") ? "#ffefef" : null),
+                    color: (company.status.toLowerCase() === "active" ? "#336C0D" : (company.status.toLowerCase() === "deactivated") ? "#891810" : null),
+                    borderColor:(company.status.toLowerCase() === "active" ? "#336C0D" : (company.status.toLowerCase() === "deactivated") ? "#891810" : null),
                     borderWidth:"1px",
-                    borderStyle:"solid", padding:"5px 10px", borderRadius:"20px"}}>{user.status}</span></td>
-
-                    <td>
-                        <span>{user.role}</span></td>
-
+                    borderStyle:"solid", padding:"5px 10px", borderRadius:"20px"}}>{company.status}</span></td>
                 <td style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
-                    <span>{user.last_login}</span>
+                    <span>{company.createdDate}</span>
                     <button style={{backgroundColor:"transparent",border:"none",cursor:"pointer"}}>
-                        <DotsVertical style={{width:"15px",height:"15px"}}/></button></td>
+                        <DotsVertical style={{width:"15px",height:"15px"}}/></button>
+                </td>
             </tr>
         ))
     }
     function handleShowView(id){
-        const foundUser = users.find(user => user.id === id);
-        setUserShowed(foundUser);
+        const foundCompany = companies.find(company => company.id === id);
         setShowView(prev => !prev);
     }
 
@@ -96,13 +90,13 @@ export default function UserManagement() {
                             <span></span>
                             Olivia Rhye
                             <ChevronRight className="arrow-right"/>
-                            Users management </p>
-                        <h2>Users management</h2>
+                            Company management </p>
+                        <h2>Company management</h2>
                     </div>
 
                 </nav>
                 <div className="users-info">
-                    <p>Users</p>
+                    <p>Companies</p>
                     <div>
                         <div className="users-search">
                             <SearchLg className="input-icon"/>
@@ -120,21 +114,21 @@ export default function UserManagement() {
 
                     </div>
                     <table className="users-table">
-                       <thead>
-                       <tr>
-                           <th><div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                               <input type="checkbox" ref={el => {
-                                   if (el) el.indeterminate = true;
-                               }}/> Selected ({selected.length}) <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/>
-                           </div>
-                               </th>
-                           <th>Email Address <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
-                           <th>Account status <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
-                           <th>Role <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
-                           <th>Last Login <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
+                        <thead>
+                        <tr>
+                            <th><div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                <input type="checkbox" ref={el => {
+                                    if (el) el.indeterminate = true;
+                                }}/> Company Name <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/>
+                            </div>
+                            </th>
+                            <th>Company Owner <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
+                            <th>No of Users <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
+                            <th>Status <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
+                            <th>Created Date <ChevronSelectorVertical style={{width:"12px", height:"12px"}}/></th>
 
-                       </tr>
-                       </thead>
+                        </tr>
+                        </thead>
 
                         <tbody>
                         {
@@ -147,7 +141,7 @@ export default function UserManagement() {
 
                 </div>
                 {
-                    users.length > 10 ? <div className="pagination-area">
+                    companies.length > 10 ? <div className="pagination-area">
                         <button onClick={handleprevious} disabled={firstPage}> <ArrowLeft style={{width:"16px", height:"16px"}} /> Previous</button>
                         <div className="pages">
                             {

@@ -27,3 +27,66 @@ export const users = [
     { id: 19, first_name: "Ethan", last_name: "Lewis", email: "ethan.lewis@email.com", status: "Active", role: "Staff", last_login: "2026-03-01 13:33" },
     { id: 20, first_name: "Evelyn", last_name: "Lee", email: "evelyn.lee@email.com", status: "Active", role: "Staff", last_login: "2026-03-03 22:17" }
 ];
+
+export const companies = [
+    {
+        id: 1,
+        name:"Giliette",
+        owner:"Jesse Roy",
+        status:"Active",
+        createdDate:"09/12/2025 06:25pm",
+        userTotal:5,
+    },
+    {
+        id: 2,
+        name:"L'Oreal",
+        owner:"Cody Fisher",
+        status:"Deactivated",
+        createdDate:"09/12/2025 06:25pm",
+        userTotal:60,
+    },
+    {
+        id: 3,
+        name:"Mitsubishi",
+        owner:"Marvin Mckinney",
+        status:"Active",
+        createdDate:"09/12/2025 06:25pm",
+        userTotal:43,
+    },
+    {
+        id: 4,
+        name:"Sony",
+        owner:"Esther Howard",
+        status:"Active",
+        createdDate:"09/12/2025 06:25pm",
+        userTotal:12,
+    },
+];
+
+export const logs = [
+    {   id:1,
+        dateTime:"09/12/2025 06:25pm",
+        actor:"Jesse Roy",
+        action:"Password Change",
+        Description:"Change profile password",
+    },
+    {   id:2,
+        dateTime:"09/12/2025 06:25pm",
+        actor:"Cody Fisher",
+        action:"Password Change",
+        Description:"Change profile password",
+    },
+    {   id:3,
+        dateTime:"09/12/2025 06:25pm",
+        actor:"Marvin Mckinney",
+        action:"Password Change",
+        Description:"Change profile password",
+    },
+    {   id:4,
+        dateTime:"09/12/2025 06:25pm",
+        actor:"Esther Howard",
+        action:"Password Change",
+        Description:"Change profile password",
+    },
+
+];

@@ -34,15 +34,21 @@ width: 140px;
     display: flex;
     flex-direction: column;
 }
-.input-holder label{
+.input-holder > label{
     color: #414651;
     font-weight: bold;
     font-size: 14px;
 }
-.input-holder input{
+.input-holder > input{
     border: 1px solid #717680;
     border-radius: 4px;
     padding: 7px 10px;
+}
+.input-holder > span{
+    font-size: 12px;
+    font-weight: 600;
+    color: #FF0033;
+    margin: 2px 0;
 }
 
 /**/

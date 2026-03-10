@@ -1,6 +1,6 @@
 import Logo from "../media/logo.png"
 import "../css/sidenav.css"
-import {SearchLg, HomeLine,BarChartSquare01,Rows01,Users01} from "@untitled-ui/icons-react";
+import {SearchLg, HomeLine,BarChartSquare01,Rows01,Users01,PieChart03,CheckDone01} from "@untitled-ui/icons-react";
 import {Link, useLocation} from "react-router-dom";
 
 export default function SideNav() {
@@ -27,6 +27,8 @@ export default function SideNav() {
             <li><Link  className={isActive("/dashboard") ? "active": ""} to="/"><BarChartSquare01/> Dashboard</Link> </li>
             <li><Link  className={isActive("/user-management") ? "active": ""} to="/user-management"><Users01/> Users management</Link></li>
             <li><Link  className={isActive("/role-management") ? "active": ""} to="/role-management"><Rows01/> Role management</Link> </li>
+            <li><Link  className={isActive("/audit-logs") ? "active": ""} to="/audit-logs"><CheckDone01/> Audit Logs</Link> </li>
+            <li><Link  className={isActive("/company-management") ? "active": ""} to="/company-management"><PieChart03/> Company management</Link> </li>
         </ul>
 
         <div className="sidenav-end">

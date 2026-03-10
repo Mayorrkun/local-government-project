@@ -2,10 +2,11 @@ import "../../css/user/usercomponents.css"
 import Close from "../../media/close.png"
 import {UsersPlus} from "@untitled-ui/icons-react";
 
-export function CreateUser({handleShow}) {
+export function CreateUser({handleShowCreate}) {
 
     function onSubmit(e){
         e.preventDefault();
+        handleShowCreate();
     }
     return(
         <div className="back-blur">
@@ -17,7 +18,7 @@ export function CreateUser({handleShow}) {
 
                         Create User
                     </p>
-                    <button onClick={handleShow}><img src={Close} alt="" className="close-icon"/></button>
+                    <button onClick={handleShowCreate}><img src={Close} alt="" className="close-icon"/></button>
 
 
                 </div>
@@ -52,7 +53,7 @@ export function CreateUser({handleShow}) {
                     </p>
 
                     <div className="button-section">
-                        <button className="cancel" type="button" onClick={handleShow}>Cancel</button> <button className="submit" type="submit">Create User</button>
+                        <button className="cancel" type="button" onClick={handleShowCreate}>Cancel</button> <button className="submit" type="submit">Create User</button>
                     </div>
                 </form>
 
