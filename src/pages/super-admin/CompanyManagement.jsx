@@ -18,9 +18,6 @@ export default function CompanyManagement() {
     const itemsPerPage = 10;
     const pages = companies.length / itemsPerPage;
     const [currentPage, setCurrentPage] = useState(1);
-    const [showView, setShowView] = useState(false);
-    const [showEdit, setShowEdit] = useState(false);
-    const [showCreate, setShowCreate] = useState(false);
     const [selected, setSelected] = useState([]);
     const firstPage = currentPage === 1;
     const lastPage =  currentPage === pages
@@ -63,25 +60,8 @@ export default function CompanyManagement() {
             </tr>
         ))
     }
-    function handleShowView(id){
-        const foundCompany = companies.find(company => company.id === id);
-        setShowView(prev => !prev);
-    }
-
-    function handleEditUser(){
-        setShowView(false);
-        setShowEdit(prevShow => !prevShow);
-    }
-    function handleShowCreate(){
-        setShowCreate(prev => !prev);
-    }
-
-    console.log(selected)
     return(
         <section className="general-section">
-            {showView ? <ViewUser handleShow={handleShowView} handleEditUser={handleEditUser} user={userShowed}/> : null}
-            {showEdit ?<EditUser handleEditUser={handleEditUser} user={userShowed} /> : null}
-            {showCreate? <CreateUser handleShowCreate={handleShowCreate}/> : null}
             <SideNav/>
             <main className="main-container">
                 <nav className="main-nav">
