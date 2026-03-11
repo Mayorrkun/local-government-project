@@ -102,10 +102,6 @@ export default function CompanyManagement() {
                             <SearchLg className="input-icon"/>
                             <input type="search" placeholder="Search"/>
                         </div>
-
-                        <button onClick={handleShowCreate}>
-                            <Plus style={{width:"20px",height:"20px" }}/> Create Company
-                        </button>
                     </div>
 
                 </div>
